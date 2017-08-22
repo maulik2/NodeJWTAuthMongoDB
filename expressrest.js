@@ -19,7 +19,7 @@ mongoose.connect(config.database);
 //var User     = require('./app/models/user');
 //var UserAccount     = require('./app/models/userAccount');
 
-
+//added comment
 app.set('view engine', 'ejs');
 
 
@@ -27,21 +27,24 @@ app.get('/login',function(req, res){
     res.render('pages/login')
 })
 
-
 app.get('/about',function(req, res){
     res.render('pages/about')
 })
 
-
 app.get('/signup',function(req, res){
     res.render('pages/signup')
+})
+
+
+app.get('/profile',function(req, res){
+    res.render('pages/profile')
 })
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/api', routes);
+app.use('/', routes);
 //app.set('superSecret', config.secret);
 app.use(morgan('dev'));
 

@@ -115,13 +115,19 @@ router.route('/authenticate')
                         expiresIn:"90d"
                     });
 
-                 res.json({
-                        success:true,
-                        message:'Login Successfull. Enjoy the JWT Token below to access secure api',
-                        id:user_id,
-                        token:token
-                       }) ; 
+                //  res.json({
+                //         success:true,
+                //         message:'Login Successfull. Enjoy the JWT Token below to access secure api',
+                //         id:user_id,
+                //         token:token
+                //        }) ; 
 
+                 res.render('./pages/profile.ejs', {
+                     _id:user._id,
+                     name:user.name,
+                     password:user.password,
+                     token:token
+                 })
                     
                                     
                 } else 
@@ -504,7 +510,7 @@ router.route('/pendingfriendlist')
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 
-app.use('/api', router);
+app.use('/', router);
 
 
 
