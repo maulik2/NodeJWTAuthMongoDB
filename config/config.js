@@ -1,5 +1,5 @@
 module.exports = {
-    'secret':'appdevsecret',
-    'database':'mongodb://127.0.0.1:27017/expressrest',
-    'mongodbHost':'mongodb://127.0.0.1:27017/expresspassport'
+    'secret':'Your-secret',
+    'database':'mongodb://Server:Port/db',
+    'mongodbHost':'mongodb://Server:Port/db'
 };
